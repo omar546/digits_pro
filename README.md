@@ -43,12 +43,13 @@ flutter pub get
 ```
 flutter run
 ```
-#Or
+
+
+# Or
 
 you can try it by downloading it directly from <a href="https://download1591.mediafire.com/60imr9rbc3hg622wDhrE685sjvZbMNyOSkkctQcTH3Enz_6fAQ3jR1jlR43k8s_k-7G4zJmq_mAPsG3mHZnibloBy4OWwUo3kSzfTA0dmnG-ePvEqqSCibZqdtUDBlIWXJ1f7c65ZRxkf4mG2l0uIt0Ba2ICEHL9yWijHV5wo4BzWA/80k80wnhriz0lij/DIGITSpro.apk">HERE</a>
 
 
-<br>
 ## Usage
 
 1. Launch the DIGITSpro app on your device.
