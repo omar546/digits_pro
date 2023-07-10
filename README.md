@@ -1,9 +1,10 @@
 # DIGITSpro
-![icon](https://github.com/omar546/digits_pro/assets/71936776/3dfe668d-e312-4064-a505-4d05a0952930)
+![icon](https://github.com/omar546/digits_pro-app/assets/71936776/f07a738f-9eff-48ae-8ce8-6e964cf09e01)
 
 
 DIGITSpro is a small math game app that generates randomized math problems for users to solve. Users can choose the type of operation (addition, subtraction, multiplication, or division) and the number of digits in the problem. It's a fun and educational way to practice math skills!
 
+![WhatsApp Video 2023-07-10 at 21 45 07](https://github.com/omar546/digits_pro-app/assets/71936776/e1081325-f99d-4ecc-9bab-9c05acc65700)
 
 
 ## Features
@@ -13,7 +14,7 @@ DIGITSpro is a small math game app that generates randomized math problems for u
 - Score tracking: The app keeps track of the user's score, displaying the number of correct and incorrect answers.
 - Time-based challenges: Users can test their speed by solving as many math problems as possible within a specific time limit.
 
-- "It still needs an improved design"
+- "It still needs an improved design and scoring system"
 
 ## Installation
 
@@ -44,7 +45,7 @@ flutter run
 ```
 #Or
 
-you can try it by downloading it directly from <a href="https://download1349.mediafire.com/rsm3gpz6q8bgyBI0E0HynSE2d1Kie6ESY2_kVWOo-XMkpoi012Fg_oc9gERKBx3qJY0QeZRewPgmxPZcg3fXDz7gnjsDx5tRtGEvSlsZ2HcaE1Fnx4QF8ARPK1owNVru-VOq5iInu3gxfNItVY_dd3TEx5SVt_02BHqs9q7I6Uok5Q/5u5gt0mr38fhvk0/DIGITSpro.apk">HERE</a>
+you can try it by downloading it directly from <a href="https://download1591.mediafire.com/60imr9rbc3hg622wDhrE685sjvZbMNyOSkkctQcTH3Enz_6fAQ3jR1jlR43k8s_k-7G4zJmq_mAPsG3mHZnibloBy4OWwUo3kSzfTA0dmnG-ePvEqqSCibZqdtUDBlIWXJ1f7c65ZRxkf4mG2l0uIt0Ba2ICEHL9yWijHV5wo4BzWA/80k80wnhriz0lij/DIGITSpro.apk">HERE</a>
 
 
 <br>
