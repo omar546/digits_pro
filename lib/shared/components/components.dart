@@ -168,7 +168,7 @@ class _CustomButtonState extends State<CustomButton> {
       },
       child: Container(
         width: MediaQuery.of(context).size.width * 0.7,
-        height: 100,
+        height: MediaQuery.of(context).size.height * 0.12,
         decoration: BoxDecoration(
           border: Border.all(
             color: Styles.darkColor, // Set the border color here
