@@ -130,13 +130,14 @@ class CustomButton extends StatefulWidget {
   final String buttonText;
   final IconData? icon;
   final VoidCallback onTap;
-  final Color? color; // Add the color parameter
+  final Color? color;
+  Color? textColor;// Add the color parameter
 
-  const CustomButton({super.key,
+   CustomButton({super.key,
     required this.buttonText,
     this.icon,
     required this.onTap,
-    this.color, // Add the color parameter to the constructor
+    this.color, this.textColor,// Add the color parameter to the constructor
   });
 
   @override
@@ -183,8 +184,10 @@ class _CustomButtonState extends State<CustomButton> {
 
             Text(
               widget.buttonText,
-              style: const TextStyle(
-                color: Styles.whiteColor,
+              style: TextStyle(
+                color: isPressed
+                    ? Styles.whiteColor.withOpacity(0.5)
+                    : (widget.textColor ?? Styles.whiteColor),
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
               ),

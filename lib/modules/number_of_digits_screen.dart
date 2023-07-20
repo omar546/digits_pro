@@ -61,6 +61,8 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                       child: CustomButton(
                         buttonText: '?${Shared.op}?',
                         color: isCustomButtonTapped && Shared.ndigits == 1 ? customButtonColor : null,
+                        textColor: isCustomButtonTapped && Shared.ndigits == 1 ? Styles.darkColor : null,
+
                         onTap: () {
                           setState(() {
                             Shared.scoremultiDI = 1;
@@ -76,6 +78,7 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                       child: CustomButton(
                         buttonText: '??${Shared.op}??',
                         color: isCustomButtonTapped && Shared.ndigits == 2 ? customButtonColor : null,
+                        textColor: isCustomButtonTapped && Shared.ndigits == 2 ? Styles.darkColor : null,
                         onTap: () {
                           setState(() {
                             Shared.scoremultiDI = 2;
@@ -104,6 +107,8 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                       child: CustomButton(
                         buttonText: '???${Shared.op}???',
                         color: isCustomButtonTapped && Shared.ndigits == 3 ? customButtonColor : null,
+                        textColor: isCustomButtonTapped && Shared.ndigits == 3 ? Styles.darkColor : null,
+
                         onTap: () {
                           setState(() {
                             Shared.scoremultiDI = 3;
@@ -119,6 +124,8 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                       child: CustomButton(
                         buttonText: '????${Shared.op}????',
                         color: isCustomButtonTapped && Shared.ndigits == 4 ? customButtonColor : null,
+                        textColor: isCustomButtonTapped && Shared.ndigits == 4 ? Styles.darkColor : null,
+
                         onTap: () {
                           setState(() {
                             Shared.scoremultiDI = 4;
@@ -148,6 +155,8 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                       child: CustomButton(
                         buttonText: '?????${Shared.op}?????',
                         color: isCustomButtonTapped && Shared.ndigits == 5 ? customButtonColor : null,
+                        textColor: isCustomButtonTapped && Shared.ndigits == 5 ? Styles.darkColor : null,
+
                         onTap: () {
                           setState(() {
                             Shared.scoremultiDI = 5;
@@ -163,6 +172,8 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                       child: CustomButton(
                         buttonText: '??????${Shared.op}??????',
                         color: isCustomButtonTapped && Shared.ndigits == 6 ? customButtonColor : null,
+                        textColor: isCustomButtonTapped && Shared.ndigits == 6 ? Styles.darkColor : null,
+
                         onTap: () {
                           setState(() {
                             Shared.scoremultiDI = 6;

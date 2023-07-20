@@ -43,6 +43,7 @@ class _OperationScreenState extends State<OperationScreen> {
                 });
               },
               color: isCustomButtonTapped && Shared.op == '+' ? Styles.blueColor : null,
+              textColor: isCustomButtonTapped && Shared.op == '+' ? Styles.darkColor : null,
             ),
             const SizedBox(height: 15,),
             CustomButton(
@@ -57,6 +58,8 @@ class _OperationScreenState extends State<OperationScreen> {
                 });
               },
               color: isCustomButtonTapped && Shared.op == '-' ? Styles.blueColor : null,
+              textColor: isCustomButtonTapped && Shared.op == '-' ? Styles.darkColor : null,
+
             ),
             const SizedBox(height: 15,),
             CustomButton(
@@ -70,6 +73,8 @@ class _OperationScreenState extends State<OperationScreen> {
                 });
               },
               color: isCustomButtonTapped && Shared.op == '*' ? Styles.blueColor : null,
+              textColor: isCustomButtonTapped && Shared.op == '*' ? Styles.darkColor : null,
+
             ),
             const SizedBox(height: 15,),
             CustomButton(
@@ -83,6 +88,8 @@ class _OperationScreenState extends State<OperationScreen> {
                 });
               },
               color: isCustomButtonTapped && Shared.op == '/' ? Styles.blueColor : null,
+              textColor: isCustomButtonTapped && Shared.op == '/' ? Styles.darkColor : null,
+
             ),
             const SizedBox(height: 30,),
             if (!isCustomButtonTapped)

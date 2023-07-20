@@ -121,10 +121,12 @@ class _QuizScreenState extends State<QuizScreen> {
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
                     ),
+                      textAlign: TextAlign.center,
                     controller: inputController,
                     keyboardType: TextInputType.number,
                     focusNode: inputFocusNode,
                     decoration: InputDecoration(
+
                       alignLabelWithHint: true,
                       hintText: 'Enter your answer',
                       hintStyle: TextStyle(
@@ -140,7 +142,12 @@ class _QuizScreenState extends State<QuizScreen> {
                         isAnswerCorrect = false;
                       });
                     },
-                  ),
+                    onFieldSubmitted: (_){
+                        checkAnswer();
+                    if (isAnswerCorrect) {
+                      setState(() {
+                        Shared.score += 1 * (Shared.scoremultiDI * Shared.scoremultiOP);
+                        inputIndicate = Colors.green;});}}),
                 ],
               ),
             ),
