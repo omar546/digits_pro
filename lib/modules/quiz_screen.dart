@@ -178,6 +178,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     focusNode: inputFocusNode,
                     decoration: InputDecoration(
                       prefix: Visibility(visible:isAnswerCorrect ,child: Icon(CupertinoIcons.checkmark_rectangle_fill,color: CupertinoColors.activeGreen,)),
+                      suffix: Visibility(visible:isAnswerCorrect ,child: Icon(CupertinoIcons.checkmark_rectangle_fill,color: CupertinoColors.activeGreen,)),
                       alignLabelWithHint: true,
                       hintText: 'Enter your answer',
                       hintStyle: TextStyle(
@@ -207,7 +208,7 @@ class _QuizScreenState extends State<QuizScreen> {
             ),
             const SizedBox(height: 30),
             SmallCustomButton(
-              color: inputIndicate,
+              color: Styles.blueColor,
               buttonText: 'CHECK',
               onTap: () {
                 checkAnswer();
@@ -217,7 +218,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     Shared.score += 10 * (Shared.scoremultiDI * Shared.scoremultiOP);
                     saveVariableToSharedPreferences('userScore', Shared.score);
                     getSavedValueFromSharedPreferences('userScore');
-                    inputIndicate = Colors.green;
+                    // inputIndicate = Colors.green;
                   });
                 }
               },
