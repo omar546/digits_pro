@@ -20,7 +20,7 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
 
   late Timer _timer;
-  late int _timerSeconds = Shared.ndigits*30;
+  late int _timerSeconds = Shared.ndigits*5;
   void startTimer() {
     const oneSec = Duration(seconds: 1);
     _timer = Timer.periodic(oneSec, (Timer timer) {
