@@ -2,9 +2,9 @@
 ![icon](https://github.com/omar546/digits_pro-app/assets/71936776/f07a738f-9eff-48ae-8ce8-6e964cf09e01)
 
 
-DIGITSpro is a small math game app that generates randomized math problems for users to solve. Users can choose the type of operation (addition, subtraction, multiplication, or division) and the number of digits in the problem. It's a fun and educational way to practice math skills!
+DIGITSpro is a simple math game app that generates randomized math problems for users to solve. Users can choose the type of operation (addition, subtraction, multiplication, or division) and the number of digits in the problem. It's a fun and educational way to practice math skills!
 
-![WhatsApp Video 2023-07-10 at 21 45 07](https://github.com/omar546/digits_pro-app/assets/71936776/e1081325-f99d-4ecc-9bab-9c05acc65700)
+![WhatsApp Video 2023-07-21 at 07 29 48](https://github.com/omar546/digits_pro/assets/71936776/4f4720ad-be5b-4856-bbb1-d671dac7f766)
 
 
 ## Features
