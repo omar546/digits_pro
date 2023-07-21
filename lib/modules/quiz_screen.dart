@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../calculations/quiz_maker.dart';
 import '../shared/components/components.dart';
@@ -118,6 +119,7 @@ class _QuizScreenState extends State<QuizScreen> {
           children: [
             Column(
               children: [
+
                 const Text(
                   'SOLVE',
                   style: TextStyle(
@@ -175,7 +177,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     keyboardType: TextInputType.number,
                     focusNode: inputFocusNode,
                     decoration: InputDecoration(
-
+                      prefix: Visibility(visible:isAnswerCorrect ,child: Icon(CupertinoIcons.checkmark_rectangle_fill,color: CupertinoColors.activeGreen,)),
                       alignLabelWithHint: true,
                       hintText: 'Enter your answer',
                       hintStyle: TextStyle(
