@@ -62,7 +62,7 @@ class _OperationScreenState extends State<OperationScreen> {
                 icon: Icons.add,
                 onTap: () {
                   setState(() {
-                    Shared.scoremultiOP=1;
+                    Shared.scoremultiOP=2;
                     Shared.op = '+';
                     isCustomButtonTapped = true;
                   });
@@ -92,7 +92,7 @@ class _OperationScreenState extends State<OperationScreen> {
                 icon: Icons.close,
                 onTap: () {
                   setState(() {
-                    Shared.scoremultiOP=2;
+                    Shared.scoremultiOP=3;
                     Shared.op = '*';
                     isCustomButtonTapped = true;
                   });
@@ -107,7 +107,7 @@ class _OperationScreenState extends State<OperationScreen> {
                 icon: CupertinoIcons.divide,
                 onTap: () {
                   setState(() {
-                    Shared.scoremultiOP=2;
+                    Shared.scoremultiOP=4;
                     Shared.op = '/';
                     isCustomButtonTapped = true;
                   });
