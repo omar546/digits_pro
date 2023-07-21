@@ -13,8 +13,8 @@ DIGITSpro is a simple math game app that generates randomized math problems for 
 - Score tracking: The app keeps track of the user's score, displaying the number of correct and incorrect answers.
 - Time-based challenges: Users can test their speed by solving as many math problems as possible within a specific time limit.
 
-![WhatsApp Video 2023-07-21 at 10 55 24](https://github.com/omar546/digits_pro/assets/71936776/62be15ba-9f1f-49c1-b64e-8e541fa2b078)
 
+![WhatsApp Video 2023-07-21 at 12 28 42](https://github.com/omar546/digits_pro/assets/71936776/3920f9f7-ca35-4704-9df0-3e7d436ac336)
 
 
 ## Installation
