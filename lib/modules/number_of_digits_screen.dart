@@ -81,7 +81,7 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: CustomButton(
-                        buttonText: '?${Shared.op}?',
+                        buttonText: '? ${Shared.op} ?',
                         color: isCustomButtonTapped && Shared.ndigits == 1
                             ? customButtonColor
                             : null,
@@ -101,7 +101,7 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: CustomButton(
-                        buttonText: '??${Shared.op}??',
+                        buttonText: '?? ${Shared.op} ??',
                         color: isCustomButtonTapped && Shared.ndigits == 2
                             ? customButtonColor
                             : null,
@@ -142,7 +142,7 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: CustomButton(
-                        buttonText: '???${Shared.op}???',
+                        buttonText: '??? ${Shared.op} ???',
                         color: isCustomButtonTapped && Shared.ndigits == 3
                             ? customButtonColor
                             : null,
@@ -162,7 +162,7 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: CustomButton(
-                        buttonText: '????${Shared.op}????',
+                        buttonText: '???? ${Shared.op} ????',
                         color: isCustomButtonTapped && Shared.ndigits == 4
                             ? customButtonColor
                             : null,
@@ -208,7 +208,7 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: CustomButton(
-                        buttonText: '?????${Shared.op}?????',
+                        buttonText: '????? ${Shared.op} ?????',
                         color: isCustomButtonTapped && Shared.ndigits == 5
                             ? customButtonColor
                             : null,
@@ -228,7 +228,7 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: CustomButton(
-                        buttonText: '??????${Shared.op}??????',
+                        buttonText: '?????? ${Shared.op} ??????',
                         color: isCustomButtonTapped && Shared.ndigits == 6
                             ? customButtonColor
                             : null,
