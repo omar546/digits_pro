@@ -1,15 +1,15 @@
+import 'package:shared_preferences/shared_preferences.dart';
+
 class Shared {
-  static int maxScore = 10000000000; // Maximum score value
-  static int _score = 0;
 
-  static int get score => _score;
+  static int score=0;
 
-  static set score(int value) {
-    _score = value;
-    if (_score >= maxScore) {
-      _score = maxScore;
-    }
+  Future<void> getValueFromSharedPreferences(value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    score = prefs.getInt('userScore') ?? 0;
+    print('score = prefs');      // Provide a default value if the key is not found
   }
+
 
   static String op = '';
   static late int ndigits;

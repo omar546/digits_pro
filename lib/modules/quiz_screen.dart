@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:digits_app/calculations/quiz_maker.dart';
+import '../calculations/quiz_maker.dart';
 import '../shared/components/components.dart';
 import '../shared/components/constants.dart';
 import '../shared/styles/styles.dart';
 import '../shared/utils/keyboard_utils.dart';
+import '../shared/utils/shared_prefs.dart';
 import 'operation_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -14,6 +17,47 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
+
+  late Timer _timer;
+  late int _timerSeconds = Shared.ndigits*30;
+  void startTimer() {
+    const oneSec = Duration(seconds: 1);
+    _timer = Timer.periodic(oneSec, (Timer timer) {
+      if (_timerSeconds > 0) {
+        setState(() {
+          _timerSeconds--;
+        });
+      } else {
+        setState(() {
+          timer.cancel();
+        });
+
+        if (Shared.score == null){
+          setState(() {
+            Shared.score =0;
+          });
+        }
+        if(!isAnswerCorrect){
+          setState(() {
+            Shared.score -= Shared.ndigits;
+            saveVariableToSharedPreferences('userScore', Shared.score);
+            getSavedValueFromSharedPreferences('userScore');
+          });}
+
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (BuildContext context) {
+          return const QuizScreen();
+        }));
+        // Add any logic you want to execute when the timer reaches 0.
+      }
+    });
+  }
+
+  void stopTimer() {
+    _timer.cancel();
+  }
+
   Color inputIndicate = Styles.blueColor;
   TextEditingController inputController = TextEditingController();
   bool isAnswerCorrect = false;
@@ -35,12 +79,14 @@ class _QuizScreenState extends State<QuizScreen> {
     // Delay the focus request until after the widget is fully built
     WidgetsBinding.instance.addPostFrameCallback((_) {
       FocusScope.of(context).requestFocus(inputFocusNode);
+      startTimer();
     });
   }
 
   @override
   void dispose() {
     inputFocusNode.dispose();
+    stopTimer();
     super.dispose();
   }
 
@@ -64,7 +110,7 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Styles.main,
-      appBar: buildAppBar(context, Shared.score),
+      appBar: buildAppBar(context),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -82,6 +128,9 @@ class _QuizScreenState extends State<QuizScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
+                Text('$_timerSeconds sec',style: const TextStyle(fontSize: 15,color: Styles.pinkColor),
+                )
+                ,const SizedBox(height: 10),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.8,
                   decoration: BoxDecoration(
@@ -146,7 +195,11 @@ class _QuizScreenState extends State<QuizScreen> {
                         checkAnswer();
                     if (isAnswerCorrect) {
                       setState(() {
-                        Shared.score += 1 * (Shared.scoremultiDI * Shared.scoremultiOP);
+                          _timer.cancel();
+                        print('stoped timer');
+                        Shared.score += 10 * (Shared.scoremultiDI * Shared.scoremultiOP);
+                        saveVariableToSharedPreferences('userScore', Shared.score);
+                        getSavedValueFromSharedPreferences('userScore');
                         inputIndicate = Colors.green;});}}),
                 ],
               ),
@@ -159,7 +212,10 @@ class _QuizScreenState extends State<QuizScreen> {
                 checkAnswer();
                 if (isAnswerCorrect) {
                   setState(() {
-                    Shared.score += 1 * (Shared.scoremultiDI * Shared.scoremultiOP);
+                    _timer.cancel();
+                    Shared.score += 10 * (Shared.scoremultiDI * Shared.scoremultiOP);
+                    saveVariableToSharedPreferences('userScore', Shared.score);
+                    getSavedValueFromSharedPreferences('userScore');
                     inputIndicate = Colors.green;
                   });
                 }
@@ -168,6 +224,7 @@ class _QuizScreenState extends State<QuizScreen> {
             const SizedBox(height: 30),
             if (!isAnswerCorrect) const SizedBox(height: 50),
             if (isAnswerCorrect)
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -187,10 +244,13 @@ class _QuizScreenState extends State<QuizScreen> {
                     buttonText: 'HOME',
                     onTap: () {
                       KeyboardUtils.hideKeyboard();
+                      saveVariableToSharedPreferences('userScore', Shared.score);
+                      getSavedValueFromSharedPreferences('userScore');
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (BuildContext context) {
                           return const OperationScreen();
+
                         }),
                       );
                     },

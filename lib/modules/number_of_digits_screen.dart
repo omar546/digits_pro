@@ -23,7 +23,7 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Styles.main,
-      appBar: buildAppBar(context, Shared.score),
+      appBar: buildAppBar(context),
       body: Center(
         child: SizedBox(
           width: MediaQuery.of(context).size.width * 0.7,
@@ -251,6 +251,7 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                 const SizedBox(
                   height: 50,
                 ),
+
               if (isCustomButtonTapped)
                 SmallCustomButton(
                   buttonText: 'NEXT',

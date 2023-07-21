@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../styles/styles.dart';
+import '../utils/shared_prefs.dart';
+import 'constants.dart';
 
 
-AppBar buildAppBar(BuildContext context, int score) {
+AppBar buildAppBar(BuildContext context) {
+
+  getSavedValueFromSharedPreferences('userScore');
+  print('app bar loaded');
   return AppBar(
+
     automaticallyImplyLeading: false,
     backgroundColor: Styles.main,
     elevation: 0.0,
@@ -66,7 +72,7 @@ AppBar buildAppBar(BuildContext context, int score) {
             Stack(
                 children:[
                   Text(
-                    '$score',
+                     '${Shared.score}',
                     style: TextStyle(
                       fontFamily: 'Dekko',
                       fontSize: 25,
@@ -77,7 +83,8 @@ AppBar buildAppBar(BuildContext context, int score) {
                     ),
                   ),
                   Text(
-                    '$score',
+                     '${Shared.score}',
+
                     style: const TextStyle(
                       fontFamily: 'Dekko',
                       fontSize: 25,
