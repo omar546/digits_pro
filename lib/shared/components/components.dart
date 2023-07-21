@@ -8,7 +8,6 @@ import 'constants.dart';
 AppBar buildAppBar(BuildContext context) {
 
   getSavedValueFromSharedPreferences('userScore');
-  print('app bar loaded');
   return AppBar(
 
     automaticallyImplyLeading: false,
@@ -59,6 +58,31 @@ AppBar buildAppBar(BuildContext context) {
                 style: TextStyle(
                   fontFamily: 'Dekko',
                   fontSize: 25,
+                  color: Styles.whiteColor,
+                ),
+              ),
+            ]
+        ),
+        Stack(
+            children:[
+              Text(
+                '   by Ano.',
+                style: TextStyle(
+                  height: 5,
+                  fontFamily: 'Dekko',
+                  fontSize: 10,
+                  foreground: Paint()
+                    ..style = PaintingStyle.stroke
+                    ..strokeWidth = 2.0
+                    ..color = Styles.darkColor,
+                ),
+              ),
+              const Text(
+                '   by Ano.',
+                style: TextStyle(
+                  height: 5,
+                  fontFamily: 'Dekko',
+                  fontSize: 10,
                   color: Styles.whiteColor,
                 ),
               ),

@@ -16,7 +16,6 @@ import '../components/constants.dart';
     if(prefs.getInt(key) == null ){Shared.score = 0;}
     else{
     Shared.score =  prefs.getInt(key)!;
-    print('from pref update');
     }
 
   }

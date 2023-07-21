@@ -196,7 +196,6 @@ class _QuizScreenState extends State<QuizScreen> {
                     if (isAnswerCorrect) {
                       setState(() {
                           _timer.cancel();
-                        print('stoped timer');
                         Shared.score += 10 * (Shared.scoremultiDI * Shared.scoremultiOP);
                         saveVariableToSharedPreferences('userScore', Shared.score);
                         getSavedValueFromSharedPreferences('userScore');

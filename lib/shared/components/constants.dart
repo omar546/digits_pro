@@ -7,7 +7,6 @@ class Shared {
   Future<void> getValueFromSharedPreferences(value) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     score = prefs.getInt('userScore') ?? 0;
-    print('score = prefs');      // Provide a default value if the key is not found
   }
 
 
