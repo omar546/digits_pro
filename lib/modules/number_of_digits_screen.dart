@@ -5,7 +5,7 @@ import '../shared/components/constants.dart';
 import '../shared/styles/styles.dart';
 import '../modules/quiz_screen.dart';
 
-enum Difficulty { easy, mid, hard }
+enum Difficulty { easy, med, hard }
 
 class NumberOfDigitsScreen extends StatefulWidget {
   const NumberOfDigitsScreen({Key? key}) : super(key: key);
@@ -119,7 +119,7 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                     ),
                   ],
                 ),
-              if (_selectedDifficulty == Difficulty.mid)
+              if (_selectedDifficulty == Difficulty.med)
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
@@ -136,7 +136,7 @@ class _NumberOfDigitsScreenState extends State<NumberOfDigitsScreen> {
                     SizedBox(height: 30),
                   ],
                 ),
-              if (_selectedDifficulty == Difficulty.mid)
+              if (_selectedDifficulty == Difficulty.med)
                 Column(
                   children: [
                     SizedBox(
