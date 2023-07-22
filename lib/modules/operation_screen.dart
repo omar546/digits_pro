@@ -35,7 +35,7 @@ class _OperationScreenState extends State<OperationScreen> {
     });
 
     // Wait for a short duration (e.g., 2 seconds)
-    await Future.delayed(Duration(milliseconds: 1));
+    await Future.delayed(Duration(seconds: 1));
 
     setState(() {
       isCustomButtonTapped = false;
