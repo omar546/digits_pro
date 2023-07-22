@@ -13,13 +13,13 @@ DIGITSpro is a simple math game app that generates randomized math problems for 
 - Score tracking: The app keeps track of the user's score, displaying the number of correct and incorrect answers.
 - Time-based challenges: Users can test their speed by solving as many math problems as possible within a specific time limit.
 
-![WhatsApp Video 2023-07-21 at 10 55 24](https://github.com/omar546/digits_pro/assets/71936776/62be15ba-9f1f-49c1-b64e-8e541fa2b078)
 
+![WhatsApp Video 2023-07-21 at 12 28 42](https://github.com/omar546/digits_pro/assets/71936776/3920f9f7-ca35-4704-9df0-3e7d436ac336)
 
 
 ## Installation
 
-you can try it by downloading it directly from <a href="https://download1527.mediafire.com/fvl6ncy6dbbgl_odVWsHqoePm3W6XcLyLrzwEvb6lhDmc_tF3R95B4Ww2RL44DzG--tksJ-PQnXU-vfraAa1z8DXVFME_Y6kF4N8ySL8ksTyUWz64ohhMvsMg56QV6hVyE6L4ecGoLX4HKF49l6r7mAlhHv16c2p-36VbaCYWR4/ma0yv3ffrkfag0p/DIGITSpro.apk">HERE</a>
+you can try it by downloading it directly from <a href="https://download1583.mediafire.com/8gyo4lb01sxgUk9oq6OgbyG-rFwKpk6cScYUw9vzaZs9i6nGKWZ35uaMY_fttX0aQy_WvUVkliv8_bjdKZHvw_59ZbAaI1ani-yH7sDqpLoHwVuMvgCRBGdD3TVVY8X6hWd1iCJzYvEo5xyZ7OXqya7BxZn4ko414lRFNnGGmG0/1c3gwmq5x95229v/DIGITSpro.apk">HERE</a>
 
 
 ## Usage
