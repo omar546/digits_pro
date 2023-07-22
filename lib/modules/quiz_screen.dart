@@ -130,7 +130,15 @@ class _QuizScreenState extends State<QuizScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                Text('$_timerSeconds sec',style: const TextStyle(fontSize: 15,color: Styles.pinkColor),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(CupertinoIcons.timer,color: Styles.pinkColor,size: 20,),
+                    const SizedBox(width: 10),
+
+                    Text('$_timerSeconds s',style: const TextStyle(fontSize: 15,color: Styles.pinkColor),
+                    ),
+                  ],
                 )
                 ,const SizedBox(height: 10),
                 Container(
