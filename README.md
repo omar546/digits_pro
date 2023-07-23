@@ -19,7 +19,7 @@ DIGITSpro is a simple math game app that generates randomized math problems for 
 
 ## Installation
 
-you can try it by downloading it directly from <a href="https://download1654.mediafire.com/uoaw0bh1iztgBg4xILSPtWmwN9uM3xHgAC6W6gx7tg1b8vTe26IZvagueKXBLMLhM0AelvDsn6vsuQFbJzhXaKY_Hi9B-5zrPz7ALkqitROE6hOHgt0Q9jRUGWr2mClQSm7Aem9p7OfYjf0AdUYIARpKBHl8uwzOOO1kKdGUTwY/mwz3gzfhzystih5/DIGITSpro.apk">HERE</a>
+you can try it by downloading it directly from <a href="https://download1085.mediafire.com/3kq3qqr84q0g8YRHbeE4DP_M8kuUELLoCKJzbU8xtphMVHC3FU02hRX6LLD0EXlPkYK4bfhWtdqu9OsZiszJgN9mJECvq1v-ijWaiWLY9deaOcw-l_pT8dU2yr28WP3CE1lDyAKx3xymUcvMDSXFnluacFBuntXkJiEitJK8dTs/mwz3gzfhzystih5/DIGITSpro.apk">HERE</a>
 
 
 ## Usage
