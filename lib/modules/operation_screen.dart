@@ -127,7 +127,7 @@ class _OperationScreenState extends State<OperationScreen> {
                 if (!isCustomButtonTapped)
                   const SizedBox(height: 50,),
 
-                if (isCustomButtonTapped && loading)
+                if (isCustomButtonTapped && loading && !isFirstLoad)
                   SmallCustomButton(
                     buttonText: 'NEXT',
                     onTap: () {
