@@ -113,191 +113,190 @@ class _QuizScreenState extends State<QuizScreen> {
       backgroundColor: Styles.main,
       appBar: buildAppBar(context),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Column(
-              children: [
-                const Text(
-                  'SOLVE',
-                  style: TextStyle(
-                    fontFamily: 'impact',
-                    color: Styles.whiteColor,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      CupertinoIcons.timer,
-                      color: Styles.pinkColor,
-                      size: 20,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  const Text(
+                    'SOLVE',
+                    style: TextStyle(
+                      fontFamily: 'impact',
+                      color: Styles.whiteColor,
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
                     ),
-                    const SizedBox(width: 10),
-                    Text(
-                      '$_timerSeconds s',
-                      style: const TextStyle(
-                          fontSize: 15, color: Styles.pinkColor),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 10),
-                Container(
-                  height: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30.0),
-                    color: Styles.lightColor,
                   ),
-                  child: Column(
+                  const SizedBox(height: 10),
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(18.0),
-                        child: Text(
-                          problem,
-                          style: const TextStyle(
-                            fontFamily: 'Dekko',
-                            color: Styles.whiteColor,
-                            fontSize: 35,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                      Icon(
+                        CupertinoIcons.timer,
+                        color: Styles.pinkColor,
+                        size: 20,
+                      ),
+                      const SizedBox(width: 10),
+                      Text(
+                        '$_timerSeconds s',
+                        style: const TextStyle(
+                            fontSize: 15, color: Styles.pinkColor),
                       ),
                     ],
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            ConstrainedBox(
-              constraints:BoxConstraints.expand(height: 110),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 60.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30.0),
-                    color: Styles.lightColor,
-                  ),
-                  child: Center(
-                    child: TextFormField(
-                        style: const TextStyle(
-                          color: Styles.blueColor,
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
+                  const SizedBox(height: 10),
+                  Container(
+                    height: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.0),
+                      color: Styles.lightColor,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: Text(
+                            problem,
+                            style: const TextStyle(
+                              fontFamily: 'Dekko',
+                              color: Styles.whiteColor,
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
-                        textAlign: TextAlign.center,
-                        controller: inputController,
-                        keyboardType: TextInputType.number,
-                        focusNode: inputFocusNode,
-                        decoration: InputDecoration(
-                          prefix: Visibility(
-                              visible: isAnswerCorrect,
-                              child: Icon(
-                                CupertinoIcons.checkmark_rectangle_fill,
-                                color: CupertinoColors.activeGreen,
-                              )),
-                          suffix: Visibility(
-                              visible: isAnswerCorrect,
-                              child: Icon(
-                                CupertinoIcons.checkmark_rectangle_fill,
-                                color: CupertinoColors.activeGreen,
-                              )),
-                          alignLabelWithHint: true,
-                          hintText: 'Enter your answer',
-                          hintStyle: TextStyle(
-                            color: Styles.blueColor.withOpacity(0.5),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              ConstrainedBox(
+                constraints:BoxConstraints.expand(height: 110),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 60.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.0),
+                      color: Styles.lightColor,
+                    ),
+                    child: Center(
+                      child: TextFormField(
+                          style: const TextStyle(
+                            color: Styles.blueColor,
                             fontSize: 32,
                             fontWeight: FontWeight.bold,
                           ),
-                          border: InputBorder.none,
-                          contentPadding:
-                              const EdgeInsets.symmetric(horizontal: 20),
-                        ),
-                        onChanged: (_) {
-                          setState(() {
-                            isAnswerCorrect = false;
-                          });
-                        },
-                        onFieldSubmitted: (_) {
-                          checkAnswer();
-                          if (isAnswerCorrect) {
+                          textAlign: TextAlign.center,
+                          controller: inputController,
+                          keyboardType: TextInputType.number,
+                          focusNode: inputFocusNode,
+                          decoration: InputDecoration(
+                            prefix: Visibility(
+                                visible: isAnswerCorrect,
+                                child: Icon(
+                                  CupertinoIcons.checkmark_rectangle_fill,
+                                  color: CupertinoColors.activeGreen,
+                                )),
+                            suffix: Visibility(
+                                visible: isAnswerCorrect,
+                                child: Icon(
+                                  CupertinoIcons.checkmark_rectangle_fill,
+                                  color: CupertinoColors.activeGreen,
+                                )),
+                            alignLabelWithHint: true,
+                            hintText: 'Enter your answer',
+                            hintStyle: TextStyle(
+                              color: Styles.blueColor.withOpacity(0.5),
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            border: InputBorder.none,
+                            contentPadding:
+                                const EdgeInsets.symmetric(horizontal: 20),
+                          ),
+                          onChanged: (_) {
                             setState(() {
-                              _timer.cancel();
-                              Shared.score += 10 *
-                                  (Shared.scoremultiDI * Shared.scoremultiOP);
-                              saveVariableToSharedPreferences(
-                                  'userScore', Shared.score);
-                              getSavedValueFromSharedPreferences('userScore');
-                              inputIndicate = Colors.green;
+                              isAnswerCorrect = false;
                             });
-                          }
-                        }),
+                          },
+                          onFieldSubmitted: (_) {
+                            checkAnswer();
+                            if (isAnswerCorrect) {
+                              setState(() {
+                                _timer.cancel();
+                                Shared.score += 10 *
+                                    (Shared.scoremultiDI * Shared.scoremultiOP);
+                                saveVariableToSharedPreferences(
+                                    'userScore', Shared.score);
+                                getSavedValueFromSharedPreferences('userScore');
+                                inputIndicate = Colors.green;
+                              });
+                            }
+                          }),
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 30),
-            SmallCustomButton(
-              color: Styles.blueColor,
-              buttonText: 'CHECK',
-              onTap: () {
-                checkAnswer();
-                if (isAnswerCorrect) {
-                  setState(() {
-                    _timer.cancel();
-                    Shared.score +=
-                        10 * (Shared.scoremultiDI * Shared.scoremultiOP);
-                    saveVariableToSharedPreferences('userScore', Shared.score);
-                    getSavedValueFromSharedPreferences('userScore');
-                    // inputIndicate = Colors.green;
-                  });
-                }
-              },
-            ),
-            const SizedBox(height: 5),
-            if (!isAnswerCorrect) const SizedBox(height: 50),
-            if (isAnswerCorrect)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SmallCustomButton(
-                    buttonText: 'NEXT',
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (BuildContext context) {
-                          return const QuizScreen();
-                        }),
-                      );
-                    },
-                  ),
-                  const SizedBox(height: 5),
-
-                  SmallCustomButton(
-                    buttonText: 'HOME',
-                    onTap: () {
-                      KeyboardUtils.hideKeyboard();
-                      saveVariableToSharedPreferences(
-                          'userScore', Shared.score);
+              const SizedBox(height: 30),
+              SmallCustomButton(
+                color: Styles.blueColor,
+                buttonText: 'CHECK',
+                onTap: () {
+                  checkAnswer();
+                  if (isAnswerCorrect) {
+                    setState(() {
+                      _timer.cancel();
+                      Shared.score +=
+                          10 * (Shared.scoremultiDI * Shared.scoremultiOP);
+                      saveVariableToSharedPreferences('userScore', Shared.score);
                       getSavedValueFromSharedPreferences('userScore');
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (BuildContext context) {
-                          return const OperationScreen();
-                        }),
-                      );
-                    },
-                  ),
-                  const SizedBox(height: 30),
-                ],
+                      // inputIndicate = Colors.green;
+                    });
+                  }
+                },
               ),
-            const SizedBox(height: 30),
+              if (!isAnswerCorrect) const SizedBox(height: 50),
+              if (isAnswerCorrect)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SmallCustomButton(
+                      buttonText: 'NEXT',
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (BuildContext context) {
+                            return const QuizScreen();
+                          }),
+                        );
+                      },
+                    ),
+                    SmallCustomButton(
+                      buttonText: 'HOME',
+                      onTap: () {
+                        KeyboardUtils.hideKeyboard();
+                        saveVariableToSharedPreferences(
+                            'userScore', Shared.score);
+                        getSavedValueFromSharedPreferences('userScore');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (BuildContext context) {
+                            return const OperationScreen();
+                          }),
+                        );
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                  ],
+                ),
+              const SizedBox(height: 20),
 
-          ],
+            ],
+          ),
         ),
       ),
     );
