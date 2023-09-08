@@ -186,69 +186,67 @@ class _CustomButtonState extends State<CustomButton> {
           isPressed = false;
         });
       },
-      child: Expanded(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 60.0),
-          child: Container(
-            height: 100,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Styles.darkColor, // Set the border color here
-                width: 2.0,
-              ),
-              borderRadius: BorderRadius.circular(30.0),
-              color: isPressed
-                  ? Styles.lightestColor.withOpacity(0.5)
-                  : (widget.color ??
-                      Styles
-                          .lightestColor), // Use the provided color if available, otherwise fallback to default color
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 60.0),
+        child: Container(
+          height: 100,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Styles.darkColor, // Set the border color here
+              width: 2.0,
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Stack(alignment: Alignment.center,children: [
-                  Text(
-                    widget.buttonText,
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      foreground: Paint()
-                        ..style = PaintingStyle.stroke
-                        ..strokeWidth = 2.0
-                        ..color = Styles.darkColor,
-                    ),
+            borderRadius: BorderRadius.circular(30.0),
+            color: isPressed
+                ? Styles.lightestColor.withOpacity(0.5)
+                : (widget.color ??
+                    Styles
+                        .lightestColor), // Use the provided color if available, otherwise fallback to default color
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Stack(alignment: Alignment.center,children: [
+                Text(
+                  widget.buttonText,
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 2.0
+                      ..color = Styles.darkColor,
                   ),
-                  Text(
-                    widget.buttonText,
-                    style: TextStyle(
-                      color: isPressed
-                          ? Styles.whiteColor.withOpacity(0.5)
-                          : (widget.textColor ?? Styles.whiteColor),
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
+                ),
+                Text(
+                  widget.buttonText,
+                  style: TextStyle(
+                    color: isPressed
+                        ? Styles.whiteColor.withOpacity(0.5)
+                        : (widget.textColor ?? Styles.whiteColor),
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ]),
+              if (widget.icon != null) const SizedBox(width: 10),
+              if (widget.icon != null)
+                Stack(alignment: Alignment.center,
+                    children: [
+                  CircleAvatar(
+                    backgroundColor: Styles.darkColor,
+                    radius: 17,
+                  ),
+                  CircleAvatar(
+                    backgroundColor: Styles.blueColor,
+                    radius: 16,
+                    child: Icon(
+                      widget.icon,
+                      size: 32,
+                      color: Styles.darkColor,
                     ),
                   ),
                 ]),
-                if (widget.icon != null) const SizedBox(width: 10),
-                if (widget.icon != null)
-                  Stack(alignment: Alignment.center,
-                      children: [
-                    CircleAvatar(
-                      backgroundColor: Styles.darkColor,
-                      radius: 17,
-                    ),
-                    CircleAvatar(
-                      backgroundColor: Styles.blueColor,
-                      radius: 16,
-                      child: Icon(
-                        widget.icon,
-                        size: 32,
-                        color: Styles.darkColor,
-                      ),
-                    ),
-                  ]),
-              ],
-            ),
+            ],
           ),
         ),
       ),

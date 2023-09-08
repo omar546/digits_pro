@@ -175,69 +175,67 @@ class _QuizScreenState extends State<QuizScreen> {
             const SizedBox(height: 20),
             ConstrainedBox(
               constraints:BoxConstraints.expand(height: 110),
-              child: Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 60.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30.0),
-                      color: Styles.lightColor,
-                    ),
-                    child: Center(
-                      child: TextFormField(
-                          style: const TextStyle(
-                            color: Styles.blueColor,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 60.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30.0),
+                    color: Styles.lightColor,
+                  ),
+                  child: Center(
+                    child: TextFormField(
+                        style: const TextStyle(
+                          color: Styles.blueColor,
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                        controller: inputController,
+                        keyboardType: TextInputType.number,
+                        focusNode: inputFocusNode,
+                        decoration: InputDecoration(
+                          prefix: Visibility(
+                              visible: isAnswerCorrect,
+                              child: Icon(
+                                CupertinoIcons.checkmark_rectangle_fill,
+                                color: CupertinoColors.activeGreen,
+                              )),
+                          suffix: Visibility(
+                              visible: isAnswerCorrect,
+                              child: Icon(
+                                CupertinoIcons.checkmark_rectangle_fill,
+                                color: CupertinoColors.activeGreen,
+                              )),
+                          alignLabelWithHint: true,
+                          hintText: 'Enter your answer',
+                          hintStyle: TextStyle(
+                            color: Styles.blueColor.withOpacity(0.5),
                             fontSize: 32,
                             fontWeight: FontWeight.bold,
                           ),
-                          textAlign: TextAlign.center,
-                          controller: inputController,
-                          keyboardType: TextInputType.number,
-                          focusNode: inputFocusNode,
-                          decoration: InputDecoration(
-                            prefix: Visibility(
-                                visible: isAnswerCorrect,
-                                child: Icon(
-                                  CupertinoIcons.checkmark_rectangle_fill,
-                                  color: CupertinoColors.activeGreen,
-                                )),
-                            suffix: Visibility(
-                                visible: isAnswerCorrect,
-                                child: Icon(
-                                  CupertinoIcons.checkmark_rectangle_fill,
-                                  color: CupertinoColors.activeGreen,
-                                )),
-                            alignLabelWithHint: true,
-                            hintText: 'Enter your answer',
-                            hintStyle: TextStyle(
-                              color: Styles.blueColor.withOpacity(0.5),
-                              fontSize: 32,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            border: InputBorder.none,
-                            contentPadding:
-                                const EdgeInsets.symmetric(horizontal: 20),
-                          ),
-                          onChanged: (_) {
+                          border: InputBorder.none,
+                          contentPadding:
+                              const EdgeInsets.symmetric(horizontal: 20),
+                        ),
+                        onChanged: (_) {
+                          setState(() {
+                            isAnswerCorrect = false;
+                          });
+                        },
+                        onFieldSubmitted: (_) {
+                          checkAnswer();
+                          if (isAnswerCorrect) {
                             setState(() {
-                              isAnswerCorrect = false;
+                              _timer.cancel();
+                              Shared.score += 10 *
+                                  (Shared.scoremultiDI * Shared.scoremultiOP);
+                              saveVariableToSharedPreferences(
+                                  'userScore', Shared.score);
+                              getSavedValueFromSharedPreferences('userScore');
+                              inputIndicate = Colors.green;
                             });
-                          },
-                          onFieldSubmitted: (_) {
-                            checkAnswer();
-                            if (isAnswerCorrect) {
-                              setState(() {
-                                _timer.cancel();
-                                Shared.score += 10 *
-                                    (Shared.scoremultiDI * Shared.scoremultiOP);
-                                saveVariableToSharedPreferences(
-                                    'userScore', Shared.score);
-                                getSavedValueFromSharedPreferences('userScore');
-                                inputIndicate = Colors.green;
-                              });
-                            }
-                          }),
-                    ),
+                          }
+                        }),
                   ),
                 ),
               ),
