@@ -38,7 +38,7 @@ class _OperationScreenState extends State<OperationScreen> {
     });
 
     // Wait for a short duration (e.g., 2 seconds)
-    await Future.delayed(Duration(milliseconds: 200));
+    await Future.delayed(Duration(milliseconds: 50));
 
     setState(() {
       isCustomButtonTapped = false;
@@ -125,7 +125,7 @@ class _OperationScreenState extends State<OperationScreen> {
                 ),
                 const SizedBox(height: 30,),
                 if (!isCustomButtonTapped)
-                  const SizedBox(height: 50,),
+                  const SizedBox(height: 66,),
 
                 if (isCustomButtonTapped && loading && !isFirstLoad)
                   SmallCustomButton(

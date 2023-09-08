@@ -18,9 +18,9 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-
   late Timer _timer;
-  late int _timerSeconds = Shared.ndigits*Shared.scoremultiDI*Shared.scoremultiOP*5;
+  late int _timerSeconds =
+      Shared.ndigits * Shared.scoremultiDI * Shared.scoremultiOP * 5;
   void startTimer() {
     const oneSec = Duration(seconds: 1);
     _timer = Timer.periodic(oneSec, (Timer timer) {
@@ -33,20 +33,20 @@ class _QuizScreenState extends State<QuizScreen> {
           timer.cancel();
         });
 
-        if (Shared.score == null){
+        if (Shared.score == null) {
           setState(() {
-            Shared.score =0;
+            Shared.score = 0;
           });
         }
-        if(!isAnswerCorrect){
+        if (!isAnswerCorrect) {
           setState(() {
             Shared.score -= Shared.ndigits;
             saveVariableToSharedPreferences('userScore', Shared.score);
             getSavedValueFromSharedPreferences('userScore');
-          });}
+          });
+        }
 
-        Navigator.pushReplacement(
-            context,
+        Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (BuildContext context) {
           return const QuizScreen();
         }));
@@ -119,7 +119,6 @@ class _QuizScreenState extends State<QuizScreen> {
           children: [
             Column(
               children: [
-
                 const Text(
                   'SOLVE',
                   style: TextStyle(
@@ -133,16 +132,22 @@ class _QuizScreenState extends State<QuizScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(CupertinoIcons.timer,color: Styles.pinkColor,size: 20,),
+                    Icon(
+                      CupertinoIcons.timer,
+                      color: Styles.pinkColor,
+                      size: 20,
+                    ),
                     const SizedBox(width: 10),
-
-                    Text('$_timerSeconds s',style: const TextStyle(fontSize: 15,color: Styles.pinkColor),
+                    Text(
+                      '$_timerSeconds s',
+                      style: const TextStyle(
+                          fontSize: 15, color: Styles.pinkColor),
                     ),
                   ],
-                )
-                ,const SizedBox(height: 10),
+                ),
+                const SizedBox(height: 10),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.8,
+                  height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30.0),
                     color: Styles.lightColor,
@@ -150,13 +155,16 @@ class _QuizScreenState extends State<QuizScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        problem,
-                        style: const TextStyle(
-                          fontFamily: 'Dekko',
-                          color: Styles.whiteColor,
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
+                      Padding(
+                        padding: const EdgeInsets.all(18.0),
+                        child: Text(
+                          problem,
+                          style: const TextStyle(
+                            fontFamily: 'Dekko',
+                            color: Styles.whiteColor,
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],
@@ -165,53 +173,73 @@ class _QuizScreenState extends State<QuizScreen> {
               ],
             ),
             const SizedBox(height: 20),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.8,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
-                color: Styles.lightColor,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextFormField(
-                    style: const TextStyle(
-                      color: Styles.blueColor,
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
+            ConstrainedBox(
+              constraints:BoxConstraints.expand(height: 110),
+              child: Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 60.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.0),
+                      color: Styles.lightColor,
                     ),
-                      textAlign: TextAlign.center,
-                    controller: inputController,
-                    keyboardType: TextInputType.number,
-                    focusNode: inputFocusNode,
-                    decoration: InputDecoration(
-                      prefix: Visibility(visible:isAnswerCorrect ,child: Icon(CupertinoIcons.checkmark_rectangle_fill,color: CupertinoColors.activeGreen,)),
-                      suffix: Visibility(visible:isAnswerCorrect ,child: Icon(CupertinoIcons.checkmark_rectangle_fill,color: CupertinoColors.activeGreen,)),
-                      alignLabelWithHint: true,
-                      hintText: 'Enter your answer',
-                      hintStyle: TextStyle(
-                        color: Styles.blueColor.withOpacity(0.5),
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      border: InputBorder.none,
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Center(
+                      child: TextFormField(
+                          style: const TextStyle(
+                            color: Styles.blueColor,
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                          controller: inputController,
+                          keyboardType: TextInputType.number,
+                          focusNode: inputFocusNode,
+                          decoration: InputDecoration(
+                            prefix: Visibility(
+                                visible: isAnswerCorrect,
+                                child: Icon(
+                                  CupertinoIcons.checkmark_rectangle_fill,
+                                  color: CupertinoColors.activeGreen,
+                                )),
+                            suffix: Visibility(
+                                visible: isAnswerCorrect,
+                                child: Icon(
+                                  CupertinoIcons.checkmark_rectangle_fill,
+                                  color: CupertinoColors.activeGreen,
+                                )),
+                            alignLabelWithHint: true,
+                            hintText: 'Enter your answer',
+                            hintStyle: TextStyle(
+                              color: Styles.blueColor.withOpacity(0.5),
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            border: InputBorder.none,
+                            contentPadding:
+                                const EdgeInsets.symmetric(horizontal: 20),
+                          ),
+                          onChanged: (_) {
+                            setState(() {
+                              isAnswerCorrect = false;
+                            });
+                          },
+                          onFieldSubmitted: (_) {
+                            checkAnswer();
+                            if (isAnswerCorrect) {
+                              setState(() {
+                                _timer.cancel();
+                                Shared.score += 10 *
+                                    (Shared.scoremultiDI * Shared.scoremultiOP);
+                                saveVariableToSharedPreferences(
+                                    'userScore', Shared.score);
+                                getSavedValueFromSharedPreferences('userScore');
+                                inputIndicate = Colors.green;
+                              });
+                            }
+                          }),
                     ),
-                    onChanged: (_) {
-                      setState(() {
-                        isAnswerCorrect = false;
-                      });
-                    },
-                    onFieldSubmitted: (_){
-                        checkAnswer();
-                    if (isAnswerCorrect) {
-                      setState(() {
-                          _timer.cancel();
-                        Shared.score += 10 * (Shared.scoremultiDI * Shared.scoremultiOP);
-                        saveVariableToSharedPreferences('userScore', Shared.score);
-                        getSavedValueFromSharedPreferences('userScore');
-                        inputIndicate = Colors.green;});}}),
-                ],
+                  ),
+                ),
               ),
             ),
             const SizedBox(height: 30),
@@ -223,7 +251,8 @@ class _QuizScreenState extends State<QuizScreen> {
                 if (isAnswerCorrect) {
                   setState(() {
                     _timer.cancel();
-                    Shared.score += 10 * (Shared.scoremultiDI * Shared.scoremultiOP);
+                    Shared.score +=
+                        10 * (Shared.scoremultiDI * Shared.scoremultiOP);
                     saveVariableToSharedPreferences('userScore', Shared.score);
                     getSavedValueFromSharedPreferences('userScore');
                     // inputIndicate = Colors.green;
@@ -231,10 +260,9 @@ class _QuizScreenState extends State<QuizScreen> {
                 }
               },
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 5),
             if (!isAnswerCorrect) const SizedBox(height: 50),
             if (isAnswerCorrect)
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -249,18 +277,19 @@ class _QuizScreenState extends State<QuizScreen> {
                       );
                     },
                   ),
-                  const SizedBox(width: 30),
+                  const SizedBox(height: 5),
+
                   SmallCustomButton(
                     buttonText: 'HOME',
                     onTap: () {
                       KeyboardUtils.hideKeyboard();
-                      saveVariableToSharedPreferences('userScore', Shared.score);
+                      saveVariableToSharedPreferences(
+                          'userScore', Shared.score);
                       getSavedValueFromSharedPreferences('userScore');
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (BuildContext context) {
                           return const OperationScreen();
-
                         }),
                       );
                     },
@@ -268,6 +297,8 @@ class _QuizScreenState extends State<QuizScreen> {
                   const SizedBox(height: 30),
                 ],
               ),
+            const SizedBox(height: 30),
+
           ],
         ),
       ),

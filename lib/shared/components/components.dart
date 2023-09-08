@@ -1,15 +1,13 @@
+
 import 'package:flutter/material.dart';
 
 import '../styles/styles.dart';
 import '../utils/shared_prefs.dart';
 import 'constants.dart';
 
-
 AppBar buildAppBar(BuildContext context) {
-
   getSavedValueFromSharedPreferences('userScore');
   return AppBar(
-
     automaticallyImplyLeading: false,
     backgroundColor: Styles.main,
     elevation: 0.0,
@@ -17,9 +15,8 @@ AppBar buildAppBar(BuildContext context) {
     leadingWidth: 0.0,
     title: Row(
       children: [
-         Stack(
-           children:[
-            Text(
+        Stack(children: [
+          Text(
             'DIGITS',
             style: TextStyle(
               fontFamily: 'impact',
@@ -29,94 +26,85 @@ AppBar buildAppBar(BuildContext context) {
                 ..strokeWidth = 2.0
                 ..color = Styles.darkColor,
             ),
-        ),
-             const Text(
-               'DIGITS',
-               style: TextStyle(
-                 fontFamily: 'impact',
-                 fontSize: 25,
-                 color: Styles.whiteColor,
-               ),
-             ),
-         ]
-         ),
-        Stack(
-            children:[
-              Text(
-                'pro',
-                style: TextStyle(
-                  fontFamily: 'Dekko',
-                  fontSize: 25,
-                  foreground: Paint()
-                    ..style = PaintingStyle.stroke
-                    ..strokeWidth = 2.0
-                    ..color = Styles.darkColor,
-                ),
-              ),
-              const Text(
-                'pro',
-                style: TextStyle(
-                  fontFamily: 'Dekko',
-                  fontSize: 25,
-                  color: Styles.whiteColor,
-                ),
-              ),
-            ]
-        ),
-        Stack(
-            children:[
-              Text(
-                '   by Ano.',
-                style: TextStyle(
-                  height: 5,
-                  fontFamily: 'Dekko',
-                  fontSize: 10,
-                  foreground: Paint()
-                    ..style = PaintingStyle.stroke
-                    ..strokeWidth = 2.0
-                    ..color = Styles.darkColor,
-                ),
-              ),
-              const Text(
-                '   by Ano.',
-                style: TextStyle(
-                  height: 5,
-                  fontFamily: 'Dekko',
-                  fontSize: 10,
-                  color: Styles.whiteColor,
-                ),
-              ),
-            ]
-        ),
-
+          ),
+          const Text(
+            'DIGITS',
+            style: TextStyle(
+              fontFamily: 'impact',
+              fontSize: 25,
+              color: Styles.whiteColor,
+            ),
+          ),
+        ]),
+        Stack(children: [
+          Text(
+            'pro',
+            style: TextStyle(
+              fontFamily: 'Dekko',
+              fontSize: 25,
+              foreground: Paint()
+                ..style = PaintingStyle.stroke
+                ..strokeWidth = 2.0
+                ..color = Styles.darkColor,
+            ),
+          ),
+          const Text(
+            'pro',
+            style: TextStyle(
+              fontFamily: 'Dekko',
+              fontSize: 25,
+              color: Styles.whiteColor,
+            ),
+          ),
+        ]),
+        Stack(children: [
+          Text(
+            '   by Ano.',
+            style: TextStyle(
+              height: 5,
+              fontFamily: 'Dekko',
+              fontSize: 10,
+              foreground: Paint()
+                ..style = PaintingStyle.stroke
+                ..strokeWidth = 2.0
+                ..color = Styles.darkColor,
+            ),
+          ),
+          const Text(
+            '   by Ano.',
+            style: TextStyle(
+              height: 5,
+              fontFamily: 'Dekko',
+              fontSize: 10,
+              color: Styles.whiteColor,
+            ),
+          ),
+        ]),
         const Expanded(child: SizedBox()),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Stack(
-                children:[
-                  Text(
-                     '${Shared.score}',
-                    style: TextStyle(
-                      fontFamily: 'Dekko',
-                      fontSize: 25,
-                      foreground: Paint()
-                        ..style = PaintingStyle.stroke
-                        ..strokeWidth = 2.0
-                        ..color = Styles.darkColor,
-                    ),
-                  ),
-                  Text(
-                     '${Shared.score}',
-
-                    style: const TextStyle(
-                      fontFamily: 'Dekko',
-                      fontSize: 25,
-                      color: Styles.whiteColor,
-                    ),
-                  ),
-                ]
-            ),
+            Stack(children: [
+              Text(
+                '${Shared.score}',
+                style: TextStyle(
+                  fontFamily: 'Dekko',
+                  fontSize: 25,
+                  foreground: Paint()
+                    ..style = PaintingStyle.stroke
+                    ..strokeWidth = 2.0
+                    ..color = Styles.darkColor,
+                ),
+              ),
+              Text(
+                '${Shared.score}',
+                style: const TextStyle(
+                  fontFamily: 'Dekko',
+                  fontSize: 25,
+                  color: Styles.whiteColor,
+                ),
+              ),
+            ]),
           ],
         ),
         const SizedBox(
@@ -125,30 +113,30 @@ AppBar buildAppBar(BuildContext context) {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Stack(
-                children:[
-                  Text(
-                    ': Score',
-                    style: TextStyle(
-                      fontFamily: 'impact',
-                      fontSize: 20,
-                      foreground: Paint()
-                        ..style = PaintingStyle.stroke
-                        ..strokeWidth = 2.0
-                        ..color = Styles.darkColor,
-                    ),
-                  ),
-                  const Text(
-                    ': Score',
-                    style: TextStyle(
-                      fontFamily: 'impact',
-                      fontSize: 20,
-                      color: Styles.whiteColor,
-                    ),
-                  ),
-                ]
+            Stack(children: [
+              Text(
+                ': Score',
+                style: TextStyle(
+                  fontFamily: 'impact',
+                  fontSize: 20,
+                  foreground: Paint()
+                    ..style = PaintingStyle.stroke
+                    ..strokeWidth = 2.0
+                    ..color = Styles.darkColor,
+                ),
+              ),
+              const Text(
+                ': Score',
+                style: TextStyle(
+                  fontFamily: 'impact',
+                  fontSize: 20,
+                  color: Styles.whiteColor,
+                ),
+              ),
+            ]),
+            const SizedBox(
+              width: 20,
             ),
-            const SizedBox(width: 20,),
           ],
         ),
       ],
@@ -156,19 +144,20 @@ AppBar buildAppBar(BuildContext context) {
   );
 }
 
-
 class CustomButton extends StatefulWidget {
   final String buttonText;
   final IconData? icon;
   final VoidCallback onTap;
   final Color? color;
-  Color? textColor;// Add the color parameter
+  Color? textColor; // Add the color parameter
 
-   CustomButton({super.key,
+  CustomButton({
+    super.key,
     required this.buttonText,
     this.icon,
     required this.onTap,
-    this.color, this.textColor,// Add the color parameter to the constructor
+    this.color,
+    this.textColor, // Add the color parameter to the constructor
   });
 
   @override
@@ -197,61 +186,83 @@ class _CustomButtonState extends State<CustomButton> {
           isPressed = false;
         });
       },
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.7,
-        height: MediaQuery.of(context).size.height * 0.12,
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Styles.darkColor, // Set the border color here
-            width: 2.0,),
-          borderRadius: BorderRadius.circular(30.0),
-          color: isPressed
-              ? Styles.lightestColor.withOpacity(0.5)
-              : (widget.color ?? Styles.lightestColor), // Use the provided color if available, otherwise fallback to default color
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-
-            Text(
-              widget.buttonText,
-              style: TextStyle(
-                color: isPressed
-                    ? Styles.whiteColor.withOpacity(0.5)
-                    : (widget.textColor ?? Styles.whiteColor),
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
+      child: Expanded(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 60.0),
+          child: Container(
+            height: 100,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Styles.darkColor, // Set the border color here
+                width: 2.0,
               ),
+              borderRadius: BorderRadius.circular(30.0),
+              color: isPressed
+                  ? Styles.lightestColor.withOpacity(0.5)
+                  : (widget.color ??
+                      Styles
+                          .lightestColor), // Use the provided color if available, otherwise fallback to default color
             ),
-            if (widget.icon != null) const SizedBox(width: 10),
-            if (widget.icon != null)
-              CircleAvatar(
-                backgroundColor: Styles.blueColor,
-                radius: 16,
-                child: Icon(
-                  widget.icon,
-                  size: 32,
-                  color: Styles.darkColor,
-                ),
-              ),
-          ],
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(alignment: Alignment.center,children: [
+                  Text(
+                    widget.buttonText,
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      foreground: Paint()
+                        ..style = PaintingStyle.stroke
+                        ..strokeWidth = 2.0
+                        ..color = Styles.darkColor,
+                    ),
+                  ),
+                  Text(
+                    widget.buttonText,
+                    style: TextStyle(
+                      color: isPressed
+                          ? Styles.whiteColor.withOpacity(0.5)
+                          : (widget.textColor ?? Styles.whiteColor),
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ]),
+                if (widget.icon != null) const SizedBox(width: 10),
+                if (widget.icon != null)
+                  Stack(alignment: Alignment.center,
+                      children: [
+                    CircleAvatar(
+                      backgroundColor: Styles.darkColor,
+                      radius: 17,
+                    ),
+                    CircleAvatar(
+                      backgroundColor: Styles.blueColor,
+                      radius: 16,
+                      child: Icon(
+                        widget.icon,
+                        size: 32,
+                        color: Styles.darkColor,
+                      ),
+                    ),
+                  ]),
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
 }
 
-
-
-
-
-
 class SmallCustomButton extends StatefulWidget {
   final String buttonText;
   final VoidCallback onTap;
   final Color? color;
 
-  const SmallCustomButton({super.key,
+   SmallCustomButton({
+    super.key,
     required this.buttonText,
     required this.onTap,
     this.color,
@@ -285,23 +296,27 @@ class _SmallCustomButtonState extends State<SmallCustomButton> {
           isPressed = false;
         });
       },
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.2,
-        height: 50,
-        decoration: BoxDecoration(
-          border: Border.all(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          height: 50,
+          width: 100,
+          decoration: BoxDecoration(
+            border: Border.all(
               color: Styles.darkColor, // Set the border color here
-              width: 2.0,),
-          borderRadius: BorderRadius.circular(30.0),
-          color: isPressed ? buttonColor.withOpacity(0.5) : buttonColor,
-        ),
-        child: Center(
-          child: Text(
-            widget.buttonText,
-            style: const TextStyle(
-              color: Styles.darkColor,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+              width: 2.0,
+            ),
+            borderRadius: BorderRadius.circular(30.0),
+            color: isPressed ? buttonColor.withOpacity(0.5) : buttonColor,
+          ),
+          child: Center(
+            child: Text(
+              widget.buttonText,
+              style: const TextStyle(
+                color: Styles.darkColor,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
