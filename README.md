@@ -18,7 +18,7 @@
 
 ## Installation
 
-you can try it by downloading it directly from <a href="https://download857.mediafire.com/d0yrt6y23gog44mc2K_2CmNEPTgS07GiayHFa7sFze9p7WVUmn1cI0I7pitAMdKqCKkFUUm4vZugMxllPr9-WkeGMF4TBmzf5MnmTfOm4cPjzDQlmVMJTEfGGjFshyYeJ8SK4IBHQQVeFlqS5IKMCQ2gaBJrYofLOCfMU_wgs5gEJg/mwz3gzfhzystih5/DIGITSpro.apk">HERE</a>
+you can try it by downloading it directly from <a href="https://www.mediafire.com/file/mwz3gzfhzystih5/DIGITSpro.apk/file">HERE</a>
 
 
 ## Usage
