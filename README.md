@@ -18,7 +18,7 @@
 
 ## Installation
 
-you can try it by downloading it directly from the releases
+you can try it by downloading it directly from the [releases](../../releases)
 
 ## Usage
 
